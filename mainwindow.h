@@ -7,6 +7,7 @@
 #include <QMainWindow>
 #include "config.h"
 #include "basewindow.h"
+#include "newlang.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -22,7 +23,12 @@ public:
     MainWindow(QWidget* parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void addNewLang();
+
 private:
+    NewLang* newLang;
+
     void initTitleBar();
     Ui::MainWindow *ui;
 };

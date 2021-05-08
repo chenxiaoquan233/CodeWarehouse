@@ -4,5 +4,6 @@
         <file>icon.png</file>
         <file>close.png</file>
         <file>min.png</file>
+        <file>close_rev.png</file>
     </qresource>
 </RCC>

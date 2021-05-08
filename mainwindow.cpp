@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "langitem.h"
+#include "newlang.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : BaseWindow(parent)
@@ -9,12 +10,19 @@ MainWindow::MainWindow(QWidget *parent)
     initTitleBar();
 
     ui->setupUi(this);
-    ui->langList->setStyleSheet("background-color:#FDF6E3;");
-    ui->add->setStyleSheet("QPushButton{border-style:none; background-color:#AC9D57;}"
-                             "QPushButton:hover{border-style:none; background-color:#8B7E44;}");
-    ui->filter->setStyleSheet("QTextEdit{border-style:solid;border-width:1px;border-color:#D4B189;background-color:#DDD6C1;}");
-    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowMinimizeButtonHint);
+    //setWindowFlags(Qt::FramelessWindowHint | Qt::WindowMinimizeButtonHint);
     setWindowIcon(QIcon(":/pngs/icon.png"));
+
+    ui->langList->verticalScrollBar()->setStyleSheet("QScrollBar:vertical{width:6px;background:rgba(0,0,0,0%);margin:0px,0px,0px,0px;padding-top:2px; padding-bottom:2px;}"
+                                                     "QScrollBar::handle:vertical{width:6px;background:rgba(0,0,0,10%);border-radius:3px;min-height:20;}"
+                                                     "QScrollBar::handle:vertical:hover{width:6px;background:rgba(0,0,0,30%);border-radius:3px;min-height:20;}"
+                                                     "QScrollBar::add-line:vertical{height:0px;width:0px;subcontrol-position:bottom;}"
+                                                     "QScrollBar::sub-line:vertical{height:0px;width:0px;subcontrol-position:top;}"
+                                                     "QScrollBar::add-line:vertical:hover{height:0px;width:0px;subcontrol-position:bottom;}"
+                                                     "QScrollBar::sub-line:vertical:hover{height:0px;width:0px;subcontrol-position:top;}"
+                                                     "QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical{background:rgba(0,0,0,3%);border-radius:3px;}");
+
+    connect(ui->add, SIGNAL(clicked(bool)), this, SLOT(addNewLang()));
 }
 
 MainWindow::~MainWindow()
@@ -26,7 +34,6 @@ void MainWindow::initTitleBar()
 {
     m_titleBar->setTitleIcon(":/pngs/icon.png");
     m_titleBar->setTitleContent(QStringLiteral("CodeWarehouse"));
-    qDebug() << this->width();
     m_titleBar->setTitleWidth(280);
 }
 
@@ -52,4 +59,11 @@ void MainWindow::addLangItem(QString picPath, QString name)
 
     ui->langList->addItem(item);
     ui->langList->setItemWidget(item, langItem);
+}
+
+void MainWindow::addNewLang()
+{
+    newLang = new NewLang();
+    newLang->setWindowModality(Qt::ApplicationModal);
+    newLang->show();
 }

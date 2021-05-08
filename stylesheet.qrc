@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/css">
+        <file>QPushButton.css</file>
+    </qresource>
+</RCC>

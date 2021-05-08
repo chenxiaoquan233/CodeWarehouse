@@ -20,8 +20,8 @@ void LangItem::init(QString picPath, QString name)
     setName(name);
 
     QImage del(":/pngs/del.png");
-    del.scaled(QSize(20, 20), Qt::KeepAspectRatio);
-    ui->del->setScaledContents(true);
+    del = del.scaled(QSize(DelPicWidth, DelPicWidth), Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    //ui->del->setScaledContents(true);
     ui->del->setPixmap(QPixmap::fromImage(del));
 }
 
@@ -31,8 +31,8 @@ void LangItem::setPic(QString picPath, QString name)
     if(imageFile.exists())
     {
         QImage image(picPath);
-        image.scaled(50, 50, Qt::KeepAspectRatio);
-        ui->langPic->setScaledContents(true);
+        image = image.scaled(LangPicWidth, LangPicWidth, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+        //ui->langPic->setScaledContents(true);
         ui->langPic->setPixmap(QPixmap::fromImage(image));
     }
     else

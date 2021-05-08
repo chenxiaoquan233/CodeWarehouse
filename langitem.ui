@@ -46,6 +46,9 @@
        <height>50</height>
       </size>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgba(0,0,0,0%);</string>
+     </property>
      <property name="text">
       <string/>
      </property>
@@ -67,6 +70,9 @@
        <width>20</width>
        <height>20</height>
       </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgba(0,0,0,0%);</string>
      </property>
      <property name="text">
       <string/>
@@ -108,6 +114,9 @@
       <font>
        <pointsize>15</pointsize>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgba(0,0,0,0%);</string>
      </property>
      <property name="text">
       <string/>

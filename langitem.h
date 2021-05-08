@@ -16,7 +16,8 @@ public:
     ~LangItem();
 private:
     Ui::LangItem *ui;
-
+    static constexpr int LangPicWidth = 40;
+    static constexpr int DelPicWidth = 20;
     void setPic(QString picPath, QString name);
     void setName(QString name);
 };

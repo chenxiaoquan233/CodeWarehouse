@@ -9,6 +9,7 @@ BaseWindow::BaseWindow(QWidget *parent)
 {
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowMinimizeButtonHint);
     setStyleSheet("background-color:#F0ECE1;");
+    setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     initTitleBar();
 }
 

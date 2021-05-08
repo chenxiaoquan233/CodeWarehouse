@@ -21,18 +21,21 @@ SOURCES += \
     config.cpp \
     langitem.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    newlang.cpp
 
 HEADERS += \
     basetitlebar.h \
     basewindow.h \
     config.h \
     langitem.h \
-    mainwindow.h \
+    mainwindow.h \ \
+    newlang.h
 
 FORMS += \
     langitem.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    newlang.ui
 
 TRANSLATIONS += \
     CodeWarehouse_zh_CN.ts

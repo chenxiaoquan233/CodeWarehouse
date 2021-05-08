@@ -39,6 +39,17 @@
          <height>30</height>
         </size>
        </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    border-style: none;
+    background-color: #AC9D57;
+}
+
+QPushButton:hover {
+    border-style: none;
+    background-color: #8B7E44;
+}</string>
+       </property>
        <property name="text">
         <string>New Type</string>
        </property>
@@ -63,6 +74,9 @@
          <pointsize>12</pointsize>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">QTextEdit{border-style:solid;border-width:1px;border-color:#D4B189;background-color:#DDD6C1;}</string>
+       </property>
        <property name="placeholderText">
         <string>Filter</string>
        </property>
@@ -75,6 +89,12 @@
          <width>200</width>
          <height>300</height>
         </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QListWidget
+{
+	background-color:#FDF6E3;
+}</string>
        </property>
       </widget>
      </item>
@@ -113,4 +133,7 @@
  </widget>
  <resources/>
  <connections/>
+ <slots>
+  <signal>signal1()</signal>
+ </slots>
 </ui>
