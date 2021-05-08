@@ -22,6 +22,7 @@ private slots:
 
 private:
     void initTitleBar();
+    void initConnect();
     Ui::NewLang *ui;
 };
 

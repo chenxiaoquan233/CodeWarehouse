@@ -9,6 +9,10 @@ NewLang::NewLang(QWidget *parent) :
 {
     ui->setupUi(this);
     initTitleBar();
+    m_titleBar->hideMinBtn();
+    m_titleBar->hideCloseBtn();
+
+    initConnect();
 }
 
 NewLang::~NewLang()
@@ -22,9 +26,14 @@ void NewLang::initTitleBar()
     m_titleBar->setTitleWidth(this->width());
 }
 
+void NewLang::initConnect()
+{
+    connect(ui->cancel, SIGNAL(clicked(bool)), this, SLOT(onCancelButtonClicked()));
+}
+
 void NewLang::onCancelButtonClicked()
 {
-
+    close();
 }
 
 void NewLang::onBrowseButtonClicked()

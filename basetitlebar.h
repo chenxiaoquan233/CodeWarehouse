@@ -19,6 +19,9 @@ public:
     void setTitleContent(QString titleContent);
     void setTitleWidth(int width);
 
+    void hideMinBtn();
+    void hideCloseBtn();
+
 private:
     void mousePressEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);

@@ -189,7 +189,7 @@
              <enum>QLayout::SetMinimumSize</enum>
             </property>
             <item>
-             <widget class="QTextEdit" name="textEdit_2">
+             <widget class="QTextEdit" name="path">
               <property name="minimumSize">
                <size>
                 <width>300</width>
@@ -336,7 +336,7 @@ QPushButton:hover {
      </property>
      <layout class="QGridLayout" name="gridLayout_3">
       <item row="0" column="2">
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="OK">
         <property name="minimumSize">
          <size>
           <width>80</width>
@@ -366,7 +366,7 @@ QPushButton:hover {
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="cancel">
         <property name="minimumSize">
          <size>
           <width>80</width>

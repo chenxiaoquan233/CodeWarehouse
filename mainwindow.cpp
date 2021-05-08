@@ -13,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent)
     //setWindowFlags(Qt::FramelessWindowHint | Qt::WindowMinimizeButtonHint);
     setWindowIcon(QIcon(":/pngs/icon.png"));
 
+    ui->langList->setStyleSheet("QListWidget::item:selected{background:#EAE0C1;}");
+
     ui->langList->verticalScrollBar()->setStyleSheet("QScrollBar:vertical{width:6px;background:rgba(0,0,0,0%);margin:0px,0px,0px,0px;padding-top:2px; padding-bottom:2px;}"
                                                      "QScrollBar::handle:vertical{width:6px;background:rgba(0,0,0,10%);border-radius:3px;min-height:20;}"
                                                      "QScrollBar::handle:vertical:hover{width:6px;background:rgba(0,0,0,30%);border-radius:3px;min-height:20;}"
@@ -53,6 +55,7 @@ void MainWindow::addLangItem(QString picPath, QString name)
 {
     LangItem* langItem = new LangItem();
     langItem->init(picPath, name);
+    langItem->setStyleSheet("border-style:none;");
 
     QListWidgetItem *item = new QListWidgetItem();
     item->setSizeHint(QSize(50, 70));

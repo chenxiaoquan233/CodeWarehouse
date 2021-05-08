@@ -26,15 +26,17 @@ void BaseTitleBar::initButtonImg()
     QImage min(":/pngs/min.png");
     QImage close(":/pngs/close.png");
 
-    minBtn->setStyleSheet("QPushButton{border-style:none; background-color:#F0ECE1;image: url(:/pngs/min.png);}"
+    minBtn->setStyleSheet("QPushButton{border-style:none; background-color:#F0ECE1;}"
                           "QPushButton:hover{border-style:none; background-color:#D9D2C2;}");
-//    minBtn->setIcon(QPixmap::fromImage(min));
-//    minBtn->setIconSize(QSize(IMG_WIDTH, IMG_WIDTH));
+    QImage minIcon(":/pngs/min.png");
+    minIcon = minIcon.scaled(QSize(IMG_WIDTH, IMG_WIDTH), Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    minBtn->setIcon(QPixmap::fromImage(minIcon));
 
-    closeBtn->setStyleSheet("QPushButton{border-style:none; background-color:#F0ECE1;image: url(:/pngs/close.png);}"
-                            "QPushButton:hover{border-style:none; background-color:#E82635;image: url(:/pngs/close_rev.png);}");
-//    closeBtn->setIcon(QPixmap::fromImage(close));
-//    closeBtn->setIconSize(QSize(IMG_WIDTH, IMG_WIDTH));
+    closeBtn->setStyleSheet("QPushButton{border-style:none; background-color:#F0ECE1;}"
+                            "QPushButton:hover{border-style:none; background-color:#E82635;}");
+    QImage closeIcon(":/pngs/close.png");
+    closeIcon = closeIcon.scaled(QSize(IMG_WIDTH, IMG_WIDTH), Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    closeBtn->setIcon(QPixmap::fromImage(closeIcon));
 }
 
 BaseTitleBar::~BaseTitleBar()
@@ -131,4 +133,14 @@ void BaseTitleBar::onButtonMinClicked()
 void BaseTitleBar::onButtonCloseClicked()
 {
     emit signalButtonCloseClicked();
+}
+
+void BaseTitleBar::hideMinBtn()
+{
+    minBtn->setVisible(false);
+}
+
+void BaseTitleBar::hideCloseBtn()
+{
+    closeBtn->setVisible(false);
 }
