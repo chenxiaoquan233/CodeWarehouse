@@ -2,7 +2,6 @@
 #define CONFIG_H
 
 #include <QString>
-#include <QSettings>
 #include <QFile>
 #include <QJsonParseError>
 #include <QtCore/QtCore>
@@ -16,7 +15,7 @@ public:
     virtual ~config();
 
     void CreateFile();
-
+    QString getDataPath();
     QDir getDataDir();
 
 private:

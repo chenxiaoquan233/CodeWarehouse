@@ -43,3 +43,8 @@ QDir config::getDataDir()
 {
     return dataDir;
 }
+
+QString config::getDataPath()
+{
+    return dataPath;
+}

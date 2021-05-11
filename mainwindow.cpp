@@ -93,8 +93,10 @@ void MainWindow::addLangItem(QString name, QString path)
 void MainWindow::addNewLang()
 {
     newLang = new NewLang();
+    newLang->setConfig(conf);
     newLang->setWindowModality(Qt::ApplicationModal);
     newLang->show();
+    qDebug() << "end";
 }
 
 void MainWindow::rmLang(QObject* item)
