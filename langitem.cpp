@@ -14,19 +14,22 @@ LangItem::~LangItem()
     delete ui;
 }
 
-void LangItem::init(QString picPath, QString name)
+void LangItem::init(QString name, QString dirPath)
 {
-    setPic(picPath, name);
-    setName(name);
+    this->dirPath = dirPath;
+    this->name = name;
 
+    setPic();
+    setName();
     QImage del(":/pngs/del.png");
     del = del.scaled(QSize(DelPicWidth, DelPicWidth), Qt::KeepAspectRatio, Qt::SmoothTransformation);
     //ui->del->setScaledContents(true);
-    ui->del->setPixmap(QPixmap::fromImage(del));
+    ui->del->setIcon(QPixmap::fromImage(del));
 }
 
-void LangItem::setPic(QString picPath, QString name)
+void LangItem::setPic()
 {
+    QString picPath = dirPath + "/lang.png";
     QFile imageFile(picPath);
     if(imageFile.exists())
     {
@@ -39,7 +42,18 @@ void LangItem::setPic(QString picPath, QString name)
         ui->langPic->setText(name);
 }
 
-void LangItem::setName(QString name)
+void LangItem::setName()
 {
     ui->langName->setText(name);
+}
+
+QPushButton* LangItem::getDelBtn()
+{
+    return ui->del;
+}
+
+void LangItem::rmLangDir()
+{
+    QDir rmDir(dirPath);
+    rmDir.removeRecursively();
 }
